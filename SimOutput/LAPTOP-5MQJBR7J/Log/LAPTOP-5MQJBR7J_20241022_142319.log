@@ -1,0 +1,33 @@
+APPLICATION	CarMaker 11.1.1 - Car_Generic #5 (win64-11.1.1)
+COMPILED	jetbrains@043832450bcb 2022-12-12 14:27:48
+ 
+SIM_START	w35testrun	2024-10-22 14:24:01
+TIME	0.001
+		Current random seed value = 1729599841
+TIME	0.000
+SIMULATE	w35testrun
+
+TIME	9.083
+SIM_END		w35testrun	9.08s	105.548m
+APPLICATION	CarMaker 11.1.1 - Car_Generic #5 (win64-11.1.1)
+COMPILED	jetbrains@043832450bcb 2022-12-12 14:27:48
+ 
+SIM_START	w35testrun	2024-10-22 14:25:11
+TIME	0.001
+		Current random seed value = 1729599911
+TIME	0.000
+SIMULATE	w35testrun
+
+TIME	24.459
+SIM_END		w35testrun	24.456s	280.644m
+APPLICATION	CarMaker 11.1.1 - Car_Generic #5 (win64-11.1.1)
+COMPILED	jetbrains@043832450bcb 2022-12-12 14:27:48
+ 
+SIM_START	w35testrun	2024-10-22 14:32:28
+TIME	0.001
+		Current random seed value = 1729600348
+TIME	0.000
+SIMULATE	w35testrun
+
+TIME	18.906
+SIM_END		w35testrun	18.903s	214.194m

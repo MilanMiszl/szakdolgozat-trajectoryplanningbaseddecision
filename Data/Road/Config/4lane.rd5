@@ -1,0 +1,75 @@
+#INFOFILE1.1 - Do not remove this line!
+FileIdent = IPGRoad 11.0
+FileCreator = CarMaker for Simulink 11.1.1
+Description:
+	Converted OpenDRIVE File (Revision 1.6)
+	Original File: Data/Road/Config/35wide.xodr
+LibVersion = 11.1.1
+Country = DEU
+nLinks = 1
+nJunctions = 0
+nObjects = 69
+nRoutes = 1
+RoadNetworkLength = 1500
+BBox = -10.0641407064035 1562.88587224577 -46.61 27.8327947132182 -11 11
+Route.0.Length = 1500
+RST.Unit = kmh
+RST = 50 100 130 30 70 30 0 -1
+Movie = 0.2 1 0.01 0 0 1 1
+Visualization.SamplingParams = 0.2 1 0.01
+Visualization.RoadsideWidth = 0 0
+Visualization.RoadsideSlope = 1 1
+Visualization.MovieNX.RenderMask = 4095
+PathMode = -1
+Link.0.ID = 0
+Link.0.Node0 = 0 0 0 0
+Link.0.Node1 = 1500 0 0 0
+Link.0.RST = Countryroad
+Link.0.RL.ID = 1
+Link.0.Seg.0.ID = 5
+Link.0.Seg.0.Type = Straight
+Link.0.Seg.0.Param = 1500 0 0 0 0 0 0 0
+Link.0.LaneSection.0.ID = 6
+Link.0.LaneSection.0.Start = 0
+Link.0.LaneSection.0.LaneL.0.ID = 7
+Link.0.LaneSection.0.LaneL.0 = 0 3.5 3.5 0 0 0 0
+Link.0.LaneSection.0.LaneL.0.ARP = 8 9 10 11 12 13
+Link.0.LaneSection.0.LaneL.1.ID = 16
+Link.0.LaneSection.0.LaneL.1 = 0 3.5 3.5 0 0 0 0
+Link.0.LaneSection.0.LaneL.1.ARP = 17 18 19 20 21 22
+Link.0.LaneSection.0.LaneL.2.ID = 43
+Link.0.LaneSection.0.LaneL.2 = 0 1 1 4 0 0 0
+Link.0.LaneSection.0.LaneL.2.ARP = 44 45 46 47 48 49
+Link.0.LaneSection.0.LaneL.3.ID = 51
+Link.0.LaneSection.0.LaneL.3 = 0 2.5 2.5 5 0 0 0
+Link.0.LaneSection.0.LaneR.0.ID = 61
+Link.0.LaneSection.0.LaneR.0 = 0 3.5 3.5 0 0 0 0
+Link.0.LaneSection.0.LaneR.0.ARP = 62 63 64 65 66 67
+Link.0.LaneSection.0.LaneR.1.ID = 88
+Link.0.LaneSection.0.LaneR.1 = 0 1 1 4 0 0 0
+Link.0.LaneSection.0.LaneR.1.ARP = 89 90 91 92 93 94
+Link.0.LaneSection.0.LaneR.2.ID = 96
+Link.0.LaneSection.0.LaneR.2 = 0 2.5 2.5 5 0 0 0
+LanePath.0 = 14 7 2 10 0.1 0.1 -1
+LanePath.1 = 23 16 2 10 0.1 0.1 -1
+LanePath.2 = 50 43 0.25 10 0.1 0.1 -1
+LanePath.3 = 68 61 2 10 0.1 0.1 -1
+LanePath.4 = 95 88 0.25 10 0.1 0.1 -1
+Route.0.ID = 122
+Route.0.Name = Route_0
+Route.0.DrvPath.ID = 123
+Route.0.DrvPath:
+	68
+RL.1.RoadMarking.0.ID = 15 7
+RL.1.RoadMarking.0 = 0 0 0 1 0 1 0.15 0 2 0 0 2 4 1 1 0 ""
+RL.1.RoadMarking.0.Material.0 = 1.0,1.0,1.0 0 0 0 0 0 0 1 1 0 0 0
+RL.1.RoadMarking.1.ID = 24 16
+RL.1.RoadMarking.1 = 0 0 0 1 0 1 0.15 0 2 0 0 2 4 1 1 0 ""
+RL.1.RoadMarking.1.Material.0 = 1.0,1.0,1.0 0 0 0 0 0 0 1 1 0 0 0
+RL.1.RoadMarking.2.ID = 69 61
+RL.1.RoadMarking.2 = 0 0 0 1 0 -1 0.15 0 2 0 0 2 4 1 1 0 ""
+RL.1.RoadMarking.2.Material.0 = 1.0,1.0,1.0 0 0 0 0 0 0 1 1 0 0 0
+RL.1.RoadMarking.3.ID = 97 6
+RL.1.RoadMarking.3 = 0 0 0 1 0 0 0.15 0 2 0 0 2 4 1 1 0 ""
+RL.1.RoadMarking.3.Material.0 = 1.0,1.0,1.0 0 0 0 0 0 0 1 1 0 0 0
+MaxUsedObjId = 123

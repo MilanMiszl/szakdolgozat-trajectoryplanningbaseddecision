@@ -1,0 +1,16 @@
+#INFOFILE1.1 - Do not remove this line!
+FileIdent = CarMaker-VehicleControl-GenLongCtrl 11
+FileCreator = CarMaker for Simulink 11.1.1
+
+AEB.SwitchedOn = 1
+AEB.RefObjectSensorName = FrontRadar
+AEB.Decel_max = 6.0
+AEB.p = 0.001
+AEB.i = 3.0
+AEB.dist_min = 5.0
+AEB.t_wait = 5.0
+AEB.tau_B = 0.2
+FCW.SwitchedOn = 1
+FCW.tau_warnLevel1 = 2.0
+FCW.tau_warnLevel2 = 1.0
+

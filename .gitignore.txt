@@ -1,0 +1,7 @@
+# Ideiglenes fájlok
+*.log
+*.tmp
+
+# Auto generált build mappák
+/build/
+/bin/

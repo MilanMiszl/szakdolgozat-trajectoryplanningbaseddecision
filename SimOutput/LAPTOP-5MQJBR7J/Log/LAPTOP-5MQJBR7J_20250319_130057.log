@@ -1,0 +1,10 @@
+APPLICATION	CarMaker 11.1.1 - Car_Generic #5 (win64-11.1.1)
+COMPILED	jetbrains@043832450bcb 2022-12-12 14:27:48
+ 
+SIM_START	w35testrun	2025-03-19 13:03:56
+TIME	0.000
+SIMULATE	w35testrun
+
+TIME	10.809
+ERROR		Vehicle leaves road at about x=104.435, y=-7.00232 TireNo=1
+SIM_ABORT	w35testrun	10.812s	101.306m
