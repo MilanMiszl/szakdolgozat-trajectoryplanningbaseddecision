@@ -36,7 +36,6 @@ globpath_points = [];
 plannerExecuted = false;
 if ((egoX >= trgtX-planstart-2) || (egoX >= trgtX-2 && egoY >= trgtY+laneWidth-0.5 && egoY <= trgtY+laneWidth+0.5)) && egoX<trgtX+endpos
     planner = plannerHybridAStar(validator, 'MinTurningRadius', 6.1, 'MotionPrimitiveLength', 6, 'ReverseCost', 100, 'DirectionSwitchingCost', 100, 'NumMotionPrimitives', 15);
-    %planner = plannerRRTStar(ss,validator);
     disp('if')
     % Útvonal adatai
     stpos = [egoX egoY];

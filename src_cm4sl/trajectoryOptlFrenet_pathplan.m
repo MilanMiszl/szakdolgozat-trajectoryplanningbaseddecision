@@ -1,8 +1,8 @@
 % Jármű pozíciók globális koordinátákban
 Ego_Vhcl_Pos = [0 -1.75 0.6467 0];
 %ego_sp = [0, 0, 0, 0, 0]; %s_dot, d_dot (sebességek), s_ddot, d_ddot (gyorsulások), omega 
-Target_Vhcl_Pos = [50 -1.75 0.6467 0];
-                     %80 1.75 0.6467 0];
+Target_Vhcl_Pos = [50 -1.75 0.6467 0;
+                     80 -1.75 0.6467 0];
 ego_CartS = [0, 12, 0]; % kappa (curve 1/m), speed (m/s), Acc (m/s^2)
 
 % Lokális koordinátarendszer beállítása az Ego járműhöz képest
@@ -89,21 +89,14 @@ if planned == false && executed == true
     distanceToTarget = Ego_Vhcl_Pos(1) - Target_Vhcl_Pos(1);
     % Ha az ego jármű legalább 8 méterrel megelőzte a célt, akkor engedélyezd a refPath-hez való visszatérést
     if (abs(distanceToTarget) < 8)
-        planner.TerminalStates.Lateral = 3.5:3.5:3.5;  % Csak az előzési sávokat engedélyezd
+        planner.TerminalStates.Lateral = 3.5;  % Csak az előzési sávot engedélyezd
     else
         planner.TerminalStates.Lateral = 0:3.5:3.5;  % Normál sávok 
     end
 
     planner.FeasibilityParameters.MaxAcceleration = 4;
     planner.Weights.LongitudinalSmoothness = 100;
-    %planner.DeviationOffset = 3.5;
     planner.NumSegments = 4;
-    
-%     if isempty(prevroutend)
-%     initCartState = [egoX, Ego_Vhcl_Pos(2), Ego_Vhcl_Pos(4), ego_CartS(1), ego_CartS(2), ego_CartS(3)]; % x, y, yaw, v, a, omega
-%     prevroutend = cart2frenet(planner,initCartState);
-%     end
-%     initFrenetState = prevroutend;
     
     initCartState = [egoX, Ego_Vhcl_Pos(2)+lateral_error(end), Ego_Vhcl_Pos(4), ego_CartS(1), ego_CartS(2), ego_CartS(3)];
     initFrenetState = cart2frenet(planner, initCartState);
@@ -180,7 +173,6 @@ if ~isempty(globpath_points) && planned == true && executed == false
         A = -(y2-y1);
         B = x2-x1;
         C = (y2-y1)*x1 - (x2-x1)*y1;
-        %atan2 vagy atan
         lineEquations = [lineEquations; globpath_points(i+1,1), A, B, C, atan2((y2-y1),(x2-x1)), globpath_points(i+1,2), curvature, globpath_points(i+1,3), globpath_points(i+1,4), globpath_points(i+1,5), globpath_points(i+1,6)];
         planned = false;
         equals = A*globpath_points(i+1,1)+B*globpath_points(i+1,2)+C;
@@ -195,12 +187,10 @@ if executed == false
         dist = num/denum;
         if abs(dist) < 0.01
             distances = [distances; lineEquations(i,1), 0, lineEquations(i,5), lineEquations(i,6), lineEquations(i,7), lineEquations(i,8), lineEquations(i,9), lineEquations(i,10), lineEquations(i,11)];
-            %distances2 = [distances2; lineEquations(i,1), 0, 0];
         else
             distances = [distances; lineEquations(i,1), dist, lineEquations(i,5), lineEquations(i,6), lineEquations(i,7), lineEquations(i,8), lineEquations(i,9), lineEquations(i,10), lineEquations(i,11)];
             dx = Ego_Vhcl_Pos(1) - lineEquations(i,1);
             dy = Ego_Vhcl_Pos(2) - lineEquations(i,6);
-            %distances2 = [distances2; lineEquations(i,1), sqrt(dx^2 + dy^2), dy];
         end
     end
 

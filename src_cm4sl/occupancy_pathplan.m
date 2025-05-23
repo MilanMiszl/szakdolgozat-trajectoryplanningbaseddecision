@@ -40,7 +40,6 @@ for i = 0:numLanes
     
     % Sáv megszakítása az első bal oldali sávhatárnál az előzendő jármű előtt és után
     if i == closestLaneIdx -1 % Első sávhatár az ego bal oldalán (növekvő Y irányban)
-        %kell egy feltétel, breakx nem lehet térképen kívül
         
         preBreakX = trgtX - 30 * scaleFactor; % Jármű előtti 30 méter
         postBreakX = trgtX + 60 * scaleFactor; % Jármű utáni 40 méter
@@ -89,7 +88,7 @@ if planned == false && executed == true
     % Állapot validátor létrehozása
     validator = validatorOccupancyMap(ss, "Map", map);
     validator.ValidationDistance = 1; % Validation distance a skálázott térképen
-%     figure(1)
+    %figure(1)
     %show(map)
 
     % Útvonal tervezés
@@ -181,12 +180,10 @@ if executed == false
         dist = num/denum;
         if abs(dist) < 0.01
             distances = [distances; lineEquations(i,1), 0, lineEquations(i,5), lineEquations(i,6), lineEquations(i,7)];
-            %distances2 = [distances2; lineEquations(i,1), 0, 0];
         else
             distances = [distances; lineEquations(i,1), dist, lineEquations(i,5), lineEquations(i,6), lineEquations(i,7)];
             dx = Ego_Vhcl_Pos(1) - lineEquations(i,1);
             dy = Ego_Vhcl_Pos(2) - lineEquations(i,6);
-            %distances2 = [distances2; lineEquations(i,1), sqrt(dx^2 + dy^2), dy];
         end
     end
 

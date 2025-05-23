@@ -101,14 +101,13 @@ figure;
 show(planner); 
 % Tervezett útvonal megjelenítése 
 hold on; 
-%quiver(Ego_Vhcl_Pos(1), Ego_Vhcl_Pos(2), cos(Ego_Vhcl_Pos(4)), sin(Ego_Vhcl_Pos(4)), 0.5, 'g'); % Jármű orientációja a kezdő pozícióban 
 xlabel('X'); 
 ylabel('Y'); 
 title(' '); 
 localLaneStartY = egoY + laneStartY - Ego_Vhcl_Pos(2);
 for i = 1:numLanes+1
     laneY = localLaneStartY + (i-1) * laneWidth; 
-    plot([0, 180], [laneY, laneY], '--k', 'LineWidth', 1.5); % Szaggatott fekete vonal
+    plot([0, 180], [laneY, laneY], '--k', 'LineWidth', 1.5);
 end
 legend('Mozgásprimitívek előre', 'Mozgásprimitívek hátra', 'Tervezett útvonal', 'Start pozíció' , 'Cél pozíció' ,'Sáv határok');
 hold off;
@@ -138,7 +137,6 @@ if ~isempty(globpath_points) && planned == true && executed == false
         A = -(y2-y1);
         B = x2-x1;
         C = (y2-y1)*x1 - (x2-x1)*y1;
-        %lineEquations = [lineEquations; x1 + (x2-x1)/2, A, B, C, refpath.States(i+1,3)];
         lineEquations = [lineEquations; globpath_points(i+1,1), A, B, C, globpath_points(i+1,3), globpath_points(i+1,2)];
         planned = false;
         equals = A*globpath_points(i+1,1)+B*globpath_points(i+1,2)+C;

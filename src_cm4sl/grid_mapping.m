@@ -74,12 +74,12 @@ for k = 1:size(laneBorders, 1) % Sávhatárok beállítása foglaltként
         xCoords = repmat(laneBorders(k, 3) + t, size(yCoords)); % X-koordináták vastagsággal
         boundaryCoords = [xCoords', yCoords']; % Összevonás koordinátapárokba
         setOccupancy(map, boundaryCoords, 1, "grid"); % Sávhatárok foglaltként megjelölése
-    end % boundaryCoords-nál ha grid-> local, felette yCoords és xCoords cseréje megváltoztatja az occ. map irányát
+    end
 end
 
 % Állapot validátor létrehozása
 validator = validatorOccupancyMap(ss, "Map", map);
-validator.ValidationDistance = 1; % Validation distance a skálázott térképen
+validator.ValidationDistance = 1;
 
 % show(map)
 % hold on;
