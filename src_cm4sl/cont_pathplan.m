@@ -54,7 +54,7 @@ executed = true;  %persistent
 if isempty(executed)
     executed = true;
 end
-planner = plannerHybridAStar(validator, 'MinTurningRadius', 6.1, 'MotionPrimitiveLength', 3, 'ReverseCost', 100, 'DirectionSwitchingCost', 100, 'NumMotionPrimitives', 7, 'AnalyticExpansionInterval',15);
+planner = plannerHybridAStar(validator, 'MinTurningRadius', 6.1, 'MotionPrimitiveLength', 3, 'ReverseCost', 100, 'DirectionSwitchingCost', 100, 'NumMotionPrimitives', 7);
 
 if planned == false && executed == true
     globpath_points = [];
